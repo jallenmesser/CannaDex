@@ -1,5 +1,37 @@
 .App {
+  display: flex;
+}
+
+.Columns {
+  display: flex;
+}
+.Options {
+  width: 30vw;
+  height: 100vh;
+  background-color: pink;
+  padding: 10px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.Product {
+  width: 70vw;
+  padding: 10px;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.list {
+  overflow-y: auto;
+}
+
+.strain {
+  overflow-y: auto;
 }
 
 .App-logo {
