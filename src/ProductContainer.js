@@ -1,13 +1,20 @@
 import React from 'react';
 import './App.css';
 import Strain from './Strain'
+import StrainDetails from './StrainDetails'
 
 const ProductContainer = (props) => {
+
+
+
   const renderStrains = () => {
-    if (props.strains) {
-      return props.strains.map((strain, ind) => <Strain key ={ind} name={strain.name}/>)
+    if (props.strains && !props.strainDetails) {
+      return props.strains.map((strain, ind) => <Strain selectedStrain={props.selectedStrain} key ={ind} name={strain.name}/>)
+    } else if (props.strainDetails) {
+      return <StrainDetails strainDetails={props.strainDetails}/>
     }
   }
+
 
   return (
     <div className="Product">

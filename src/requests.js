@@ -19,3 +19,7 @@ export const fetchSelectedEffect = (effect) => fetch(baseURL + `/strains/search/
 export const fetchSelectedFlavor = (flavor) => fetch(baseURL + `/strains/search/flavor/${flavor}`)
 .then(parseData)
 .catch(catchError)
+
+export const fetchSelectedStrainDetails = (strain) => fetch(baseURL + `/strains/search/name/${strain}`)
+.then(parseData)
+.catch(catchError)

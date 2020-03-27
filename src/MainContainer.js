@@ -11,6 +11,8 @@ const MainContainer = () => {
   const [selectedOption, setSelectedOption] = useState('')
   const [type, setType] = useState('')
   const [strains, setStrains] = useState([])
+  const [strain, setStrain] = useState('')
+  const [strainDetails, setStrainDetails] = useState()
 
   useEffect(() => {
     requests.fetchEffects()
@@ -32,17 +34,26 @@ const MainContainer = () => {
 
   const selectOption = (name) => {
     setSelectedOption(name)
+    setStrainDetails('')
   }
 
   const changeType = (name) => {
     setType(name)
   }
 
+  const selectedStrain = (name) => {
+    console.log(name)
+    setStrain(name)
+    requests.fetchSelectedStrainDetails(name)
+    .then(details => setStrainDetails(details.find(detail => detail.name === name)))
+  }
+
+
   return (
     <div>
       <div className="Columns">
         <OptionsContainer flavors={flavors} effects={effects} selectOption={selectOption} changeType={changeType} type={type}/>
-        <ProductContainer strains={strains}/>
+        <ProductContainer strains={strains} selectedStrain={selectedStrain} strainDetails={strainDetails}/>
       </div>
     </div>
   );
