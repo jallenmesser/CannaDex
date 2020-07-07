@@ -1,7 +1,7 @@
 import React from 'react';
-import './App.css';
-import Strain from './Strain'
-import StrainDetails from './StrainDetails'
+import '../App.css';
+import Strain from '../Componets/Strain'
+import StrainDetails from '../Componets/StrainDetails'
 
 const ProductContainer = (props) => {
 

@@ -1,6 +1,6 @@
 import React from 'react';
-import './App.css';
-import ListItem from './ListItem'
+import '../App.css';
+import ListItem from '../ListItem'
 
 const OptionsContainer = (props) => {
 

@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react'
-import './App.css';
+import '../App.css';
 import OptionsContainer from './OptionsContainer'
 import ProductContainer from './ProductContainer'
-import * as requests from './requests'
+import * as requests from '../requests'
 
 const MainContainer = () => {
   
