@@ -2,7 +2,7 @@ import React from 'react';
 import '../App.css';
 
 const StrainDetails = (props) => {
-    // console.log(props)
+    console.log(props)
     return (
       <div >
         <h1 name={props.strainDetails.name}>{props.strainDetails.name}</h1>

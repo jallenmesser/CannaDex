@@ -9,7 +9,7 @@ const ProductContainer = (props) => {
 
   const renderStrains = () => {
     if (props.strains && !props.strainDetails) {
-      return props.strains.map((strain, ind) => <Strain selectedStrain={props.selectedStrain} key ={ind} name={strain.name}/>)
+      return props.strains.map((strain, ind) => <Strain selectedStrain={props.selectedStrain} key ={ind} name={strain.name} id={strain.id}/>)
     } else if (props.strainDetails) {
       return <StrainDetails strainDetails={props.strainDetails}/>
     }

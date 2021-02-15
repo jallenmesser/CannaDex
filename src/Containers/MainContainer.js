@@ -25,15 +25,16 @@ const MainContainer = () => {
   useEffect(() => {
     if (type === 'flavors') {
       requests.fetchSelectedFlavor(selectedOption)
-      .then(strains => setStrains(strains));
+      .then(flavor => setStrains(flavor.strains));
     } else if (type === 'effects') {
       requests.fetchSelectedEffect(selectedOption)
-      .then(strains => setStrains(strains))
+      .then(effect => setStrains(effect.strains))
     }
   }, [selectedOption])
 
-  const selectOption = (name) => {
-    setSelectedOption(name)
+  const selectOption = (id) => {
+    console.log(id)
+    setSelectedOption(id)
     setStrainDetails('')
   }
 
@@ -41,11 +42,11 @@ const MainContainer = () => {
     setType(name)
   }
 
-  const selectedStrain = (name) => {
-    console.log(name)
-    setStrain(name)
-    requests.fetchSelectedStrainDetails(name)
-    .then(details => setStrainDetails(details.find(detail => detail.name === name)))
+  const selectedStrain = (id) => {
+    console.log(id)
+    setStrain(id)
+    requests.fetchSelectedStrainDetails(id)
+    .then(strain => setStrainDetails(strain))
   }
 
 
